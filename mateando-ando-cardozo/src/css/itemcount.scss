@@ -1,4 +1,9 @@
+div {
+  display: flex;
+  flex-direction: column;
+}
 button {
+  max-width: 30vh;
   background-color: #EA4C89;
   border-radius: 8px;
   border-style: none;
@@ -28,4 +33,8 @@ button {
 button:hover,
 button:focus {
   background-color: #F082AC;
+}
+
+img {
+  max-width: 30vh;
 }

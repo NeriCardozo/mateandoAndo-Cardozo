@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import '../css/itemcount.scss'
+import mate from '../mate1.png'
 function ItemCount(props){
+    let fotoMate = mate;
 
     let initialCount = props.initial;
 
@@ -32,14 +34,12 @@ const substractOne = ()=> {
 
     return(
         <div>
-            <h3>¿Deseas agregar o quitar stock?</h3>
-            <div>
-
+            <h3>¿Deseas agregar o quitar unidades?</h3>
+            <img src={fotoMate} />
             <button onClick={addOne}>Sumar</button>
             <button onClick={substractOne}>Restar</button>
-            <div>Agregaste {count}</div>
+            <h3>Agregaste {count}</h3>
             <button onClick={addToCart}>Agregar al carrito</button>
-            </div>
     </div>
     )
 }
