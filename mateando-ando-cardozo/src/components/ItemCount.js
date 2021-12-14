@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import '../css/itemcount.scss'
 function ItemCount(props){
 
     let initialCount = props.initial;
@@ -36,8 +36,8 @@ const substractOne = ()=> {
             <div>
 
             <button onClick={addOne}>Sumar</button>
-            <div>Agregaste {count}</div>
             <button onClick={substractOne}>Restar</button>
+            <div>Agregaste {count}</div>
             <button onClick={addToCart}>Agregar al carrito</button>
             </div>
     </div>
