@@ -2,7 +2,6 @@ import React from 'react'
 import '../css/navbar.scss'
 import logo from '../logo.jpg'
 import CartWidget from './CartWidget.js'
-import ItemListContainer from './ItemListContainer.js'
 
 function NavBar() {
 
@@ -19,7 +18,6 @@ function NavBar() {
       <li><a href='#'><CartWidget /></a></li>
     </ul>
   </nav>
-      <ItemListContainer />
 </div>
  
 </>
