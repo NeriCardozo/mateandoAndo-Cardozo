@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import '../css/itemcount.scss'
+import '../css/itemlist.scss'
 import mate from '../mate1.png'
-function ItemCount(props){
+function ItemList(props){
     let fotoMate = mate;
 
-    let initialCount = props.initial;
-
-    const [count, setCount] = useState(initialCount);
-
-// Por algún motivo que desconozco, si primero presionas el botón 
-// Sumar, te suma de 1 a 11 y así, pero si primero presionas el 
-// de restar, funciona OK. Luego necesitaré ayuda con eso!
+    const [count, setCount] = useState(props.initial);
 
 const addOne = ()=> {
     if (count < props.stock){
@@ -31,7 +25,7 @@ const substractOne = ()=> {
         setCount(0)
     }
 
-
+console.log(props.id)
     return(
         <div>
             <h3>¿Deseas agregar o quitar unidades?</h3>
@@ -44,4 +38,4 @@ const substractOne = ()=> {
     )
 }
 
-export default ItemCount;
+export default ItemList;
