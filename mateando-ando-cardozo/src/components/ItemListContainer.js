@@ -28,5 +28,4 @@ function ItemListContainer(){
         <ItemList stock= {3} initial= {0} id= {params} />
     )
 }
-
 export default ItemListContainer;

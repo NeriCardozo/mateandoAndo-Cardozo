@@ -3,6 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import '../css/navbar.scss'
 import logo from '../logo.jpg'
 import CartWidget from './CartWidget.js'
+import ItemListContainer from './ItemListContainer.js'
 
 function NavBar() {
 
@@ -29,6 +30,7 @@ function NavBar() {
       <li> <NavLink to="/"><a><CartWidget /></a></NavLink></li>
     </ul>
   </nav>
+      <ItemListContainer />
 </div>
  
 </>
