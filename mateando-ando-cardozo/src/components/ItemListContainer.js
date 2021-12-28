@@ -9,15 +9,15 @@ function ItemListContainer(){
 
 const [productos, setProductos] = useState([]);
 const categoryId = useParams();
+console.log(categoryId)
 
-useEffect(() => {
-    
+useEffect(() => { 
     setTimeout(()=>{
-        if(!categoryId){
+        setProductos([])
+        if(!categoryId.id){
             const getItems = (() => {
                 let res = [...productList];
                 setProductos(res);
-                console.log("Hola" + productos);
             });
             getItems()
         }else{

@@ -13,14 +13,13 @@ function ItemDetail(props){
             setItem(res);
         }
         getItem();
-        console.log(item);
     },[])
     
     return(
         <ul>
-            <h3> {props.producto[props.id.id - 1]?.itemName}</h3>
-            <img src={props.producto[props.id.id - 1]?.img} />
-            <ItemCount stock= {props.producto[props.id.id - 1]?.stock} initial={0}/>
+            <h3> {item.itemName}</h3>
+            <img src={item.img} />
+            <ItemCount stock= {item.stock} initial={0}/>
         </ul>
 )}
 
