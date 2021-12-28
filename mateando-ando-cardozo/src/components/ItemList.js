@@ -21,6 +21,7 @@ function ItemList(props){
             <NavLink to={`/Item/${props.producto.itemId}`}>
                 <h3> {item.itemName}</h3>
                 <img src={item.img} />
+                <h4>Ver detalle</h4>
             </NavLink> 
         </li>   
     ) : (

@@ -1,9 +1,7 @@
 import React from 'react'
 import '../css/cartwidget.scss'
 
-function CartWidget() {
-
-    
+function CartWidget(props) {
 
     return <>
 <div>
