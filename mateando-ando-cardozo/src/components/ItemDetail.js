@@ -19,6 +19,7 @@ function ItemDetail(props){
         <ul>
             <h3> {item.itemName}</h3>
             <img src={item.img} />
+            <h4> {item.descripcion1}</h4>
             <ItemCount stock= {item.stock} initial={0}/>
         </ul>
 )}
