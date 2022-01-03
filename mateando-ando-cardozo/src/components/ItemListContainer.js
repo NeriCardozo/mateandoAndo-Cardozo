@@ -1,8 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import * as React from 'react';
+import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList.js'
 import productList from '../data/productList.js';
 import '../css/itemlist.scss'
+import '../css/flexbox.css'
 import Loading from './Loading.js';
 
 function ItemListContainer(){
@@ -30,9 +32,9 @@ useEffect(() => {
 },[categoryId]);
 
     if(productos.length > 0){
-        return (
-            <div>
-            <ul>
+        return (   
+            <div className="container">
+            <ul className="grid-item">
         {productos.map( p => (
             <ItemList key= {p.itemId} producto= {p}/>
             ))}

@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: fit-content;
   }
   
   div {
@@ -29,9 +30,11 @@
     margin: 25px;
     background: #f9f9f9;
     padding: 16px;
+    display: contents;
     .menuItems {
       list-style: none;
       display: flex;
+      justify-content: space-between;
   
       li {
         margin: 50px;

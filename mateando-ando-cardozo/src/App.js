@@ -4,14 +4,13 @@ import ItemListContainer from './components/ItemListContainer.js'
 import ItemDetailContainer from './components/ItemDetailContainer.js'
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import CartChechkout from './components/CartCheckout.js';
-
+import cartContext from './context/cartContext.js';
 
 function App() {
 
-  const Home = () => (<div>Bienvenidos a nuestro sitio :)</div>)
-
   return (
     <BrowserRouter>
+
     <div className="App">
     <NavBar />
       
