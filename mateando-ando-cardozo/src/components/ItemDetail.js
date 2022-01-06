@@ -28,7 +28,7 @@ function ItemDetail(props){
     },[])
     
     return item ?         
-    <Card sx={{ maxWidth: 500 }}>
+    <Card className="itemdetail" sx={{ maxWidth: 500 }}>
     <CardMedia
       component="img"
       height="440"

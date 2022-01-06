@@ -3,7 +3,6 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import '../css/itemdetail.scss'
 import { NavLink } from 'react-router-dom';
 import '../css/itemlist.scss';
 import Loading from './Loading.js';
@@ -21,6 +20,7 @@ function ItemList(props){
     },[])
     
     return item ? (
+
         <NavLink to={`/Item/${item.id}`}>
 
         <Card sx={{ maxWidth: 770 }}>

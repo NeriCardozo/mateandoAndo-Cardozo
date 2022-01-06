@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList.js'
 import {collection, doc, getDocs, getFirestore, query, where} from 'firebase/firestore'
-import '../css/itemlist.scss'
+import '../css/itemlistcontainer.scss'
 import '../css/flexbox.css'
 import Loading from './Loading.js';
 
