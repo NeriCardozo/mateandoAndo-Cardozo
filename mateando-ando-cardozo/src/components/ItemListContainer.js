@@ -3,40 +3,38 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList.js'
 import productList from '../data/productList.js';
+import {collection, doc, getDocs, getFirestore, query, where} from 'firebase/firestore'
 import '../css/itemlist.scss'
 import '../css/flexbox.css'
 import Loading from './Loading.js';
 
 function ItemListContainer(){
 
-const [productos, setProductos] = useState([]);
-const categoryId = useParams();
-console.log(categoryId)
+const [items, setItems] = useState([{}]);
+const params = useParams();
+const db =  getFirestore();
 
 useEffect(() => { 
-    setTimeout(()=>{
-        setProductos([])
-        if(!categoryId.id){
-            const getItems = (() => {
-                let res = [...productList];
-                setProductos(res);
-            });
-            getItems()
+    const itemsCollection = collection(db, "items");
+    getDocs(itemsCollection).then((res) => {
+            if (params.id){
+                const q = query(itemsCollection, where("categoryId", "==", params.id));
+                getDocs(q).then((res) => {
+                    setItems(res.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+                })
         }else{
-            const productosFiltrados = productList.filter(producto => producto.itemCategoryId === categoryId.id);
-            console.log(productosFiltrados);
-            setProductos(productosFiltrados);
-        }
-    },2000)
-  
-},[categoryId]);
-
-    if(productos.length > 0){
+            // const ItemsCollectionFromCategory = itemsCollection.where('categoryId', '=',)
+            setItems(res.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+            console.log(items);
+        }})
+    },[params]
+)
+    if (items){
         return (   
             <div className="container">
             <ul className="grid-item">
-        {productos.map( p => (
-            <ItemList key= {p.itemId} producto= {p}/>
+        {items.map( p => (
+            <ItemList key= {p.id} producto= {p}/>
             ))}
 </ul>
         </div>

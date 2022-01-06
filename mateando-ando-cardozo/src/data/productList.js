@@ -31,11 +31,11 @@
             img: 'https://argensnack.com/wp-content/uploads/latinafy_image_7790387015225.jpg'
         },
         {  
-            itemId: 5,
+            itemId: 4,
             itemName: "Mate de calabaza",
             itemCategoryId: "1",
             stock: 3,
-            descripcion1: "Mate ideal de sabor",
+            descripcion1: "Tu mate ideal",
             descripcion2: "",
             price: 3400,
             img: 'https://yerbamateprimicia.com.ar/wp-content/uploads/2020/10/MATEEE.png'

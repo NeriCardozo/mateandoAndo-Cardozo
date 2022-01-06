@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import Button from '@mui/material/Button';
 import '../css/itemcount.scss'
 
 function ItemCount(props){
+    const item = props.item;
     const [count, setCount] = useState(0);
     const [productosSumados, setProductosSumados] = useState(0)
 
+    console.log(item)
+
     const addOne = ()=> {
-        if (count < props.stock){
+        if (count < item.stock){
             setCount(count + 1)
         }else{
             alert("No hay suficiente stock!")
@@ -30,11 +34,11 @@ function ItemCount(props){
     if (productosSumados === 0 ){
         return (
                 <div>
-        <h3>¿Deseas agregar o quitar unidades? Hay {props.stock} disponibles.</h3>
-        <button onClick={addOne}>Sumar</button>
-        <button onClick={substractOne}>Restar</button>
+        <h3>¿Deseas agregar o quitar unidades? Hay {item.stock} disponibles.</h3>
+        <Button onClick={addOne}>Sumar</Button>
+        <Button onClick={substractOne}>Restar</Button>
         <h3>Agregaste {count}</h3>
-        <button onClick={addToCart}>Agregar al carrito</button>
+        <Button onClick={addToCart}>Agregar al carrito</Button>
     </div>)
 }else{
     return (
