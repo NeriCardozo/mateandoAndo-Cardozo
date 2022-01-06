@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import '../css/itemdetail.scss'
 import { useParams } from 'react-router-dom';
 import ItemCount from './ItemCount.js';
-import productList from '../data/productList.js';
 import Loading from './Loading.js';
 import {collection, doc, getDoc, getFirestore, query, where} from 'firebase/firestore'
 

@@ -2,7 +2,6 @@ import * as React from 'react';
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList.js'
-import productList from '../data/productList.js';
 import {collection, doc, getDocs, getFirestore, query, where} from 'firebase/firestore'
 import '../css/itemlist.scss'
 import '../css/flexbox.css'
