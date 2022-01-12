@@ -33,6 +33,6 @@ grid-gap: 20px;
 export const Heading = styled.p`
 font-size: 24px;
 color: #fff;
-margin-bottom: 40px;
+margin-bottom: 20px;
 font-weight: bold;
 `;

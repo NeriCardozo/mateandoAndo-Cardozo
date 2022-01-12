@@ -1,17 +1,25 @@
-import * as React from 'react';
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList.js'
-import {collection, doc, getDocs, getFirestore, query, where} from 'firebase/firestore'
+import {collection, doc, getDocs, getFirestore, query, where, writeBatch} from 'firebase/firestore'
 import '../css/itemlistcontainer.scss'
 import '../css/flexbox.css'
 import Loading from './Loading.js';
 
 function ItemListContainer(){
 
+
+
 const [items, setItems] = useState([{}]);
 const params = useParams();
 const db =  getFirestore();
+
+const batch= writeBatch(db);
+
+
+// const handleClick = batch.set(order, {campoNuevo:"test"})
+// batch.update(order, {campoNuevo: 1234})
+// batch.commit()
 
 useEffect(() => { 
     const itemsCollection = collection(db, "items");

@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState, useContext} from 'react'
 import { NavLink, useParams } from 'react-router-dom';
 import '../css/navbar.scss'
 import logo from '../logo.jpg'
@@ -6,6 +6,7 @@ import CartWidget from './CartWidget.js'
 import ItemListContainer from './ItemListContainer.js'
 
 function NavBar() {
+
 
   const {id} = useParams();
 
@@ -28,6 +29,7 @@ function NavBar() {
       <li> <NavLink to={"/Category/4"}><a>Kits y accesorios</a></NavLink></li>
       <li> <NavLink to="/login"><a>Iniciar sesión</a></NavLink></li>
       <li> <NavLink to="/cart"><a><CartWidget /></a></NavLink></li>
+      {/* <li> <button onClick={toggleTheme}> {darkTheme? "Modo oscuro!" : "Modo claro!"}</button></li> */}
     </ul>
   </nav>
 </div>

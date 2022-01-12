@@ -1,19 +1,18 @@
+import React, { useContext } from 'react'
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer.js'
 import ItemDetail from './components/ItemDetail.js'
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import CartChechkout from './components/CartCheckout.js';
-import CartContext from './context/CartContext';
+import {CartProvider} from './contexts/CartContext';
 import Footer from './components/Footer';
+import {ThemeProvider} from './contexts/ThemeContext';
 
 function App() {
-
   return (
-    <div className="App">
+<CartProvider>
     <BrowserRouter>
-
-    
     <NavBar />
         <Routes> 
           <Route path="/" element={<ItemListContainer />}/>
@@ -23,7 +22,7 @@ function App() {
         </Routes>
 <Footer />
 </BrowserRouter>
-</div>
+</CartProvider>
   );
 }
 

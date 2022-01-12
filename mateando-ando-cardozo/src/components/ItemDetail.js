@@ -8,13 +8,31 @@ import '../css/itemdetail.scss'
 import { useParams } from 'react-router-dom';
 import ItemCount from './ItemCount.js';
 import Loading from './Loading.js';
-import {collection, doc, getDoc, getFirestore, query, where} from 'firebase/firestore'
+import {addDoc, collection, doc, getDoc, getFirestore, query, where} from 'firebase/firestore'
 
 function ItemDetail(props){
+  
+  const precioTotal = 60  
+
+  let order = {
+    buyer: {name:"neri", phone:"414142313", email:"neri@cardozo.com"},
+    items: [{id: 1, title:"patineta",price:10},{id: 2, title:"celu",price:50}],
+    total: precioTotal,
+}
 
   const db =  getFirestore();
   const params = useParams();
   const [item, setItem] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newItem = {nombre: e.target[0].value, precio:e.target[1].value }
+    const data = collection(db, "orders")
+    addDoc(data, order).then((snapshot)=>{
+      console.log(snapshot.data());
+      
+    })
+  }
 
 
   useEffect(() => {

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import CartContext from '../context/CartContext.js';
-
+import CartContext from '../contexts/CartContext.js';
+import {useCart} from '../contexts/CartContext'
 import '../css/cartwidget.scss'
 
 function CartWidget(props) {
-const [cartCount, setCartCount] = useState(0);
+    const carrito  = useCart()
 
 useEffect( ()=> {
 
@@ -12,7 +12,7 @@ useEffect( ()=> {
 
     return <>
 <div>
-<i class="fas fa-shopping-cart">{cartCount}</i>
+<i class="fas fa-shopping-cart">{carrito.length}</i>
 </div>
 </>
 }
