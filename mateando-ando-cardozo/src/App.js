@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import CartChechkout from './components/CartCheckout.js';
 import {CartProvider} from './contexts/CartContext';
 import Footer from './components/Footer';
-import {ThemeProvider} from './contexts/ThemeContext';
 
 function App() {
   return (

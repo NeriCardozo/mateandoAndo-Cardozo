@@ -29,7 +29,6 @@ function NavBar() {
       <li> <NavLink to={"/Category/4"}><a>Kits y accesorios</a></NavLink></li>
       <li> <NavLink to="/login"><a>Iniciar sesión</a></NavLink></li>
       <li> <NavLink to="/cart"><a><CartWidget /></a></NavLink></li>
-      {/* <li> <button onClick={toggleTheme}> {darkTheme? "Modo oscuro!" : "Modo claro!"}</button></li> */}
     </ul>
   </nav>
 </div>
